@@ -3,6 +3,7 @@ package site.thedeny1106.study.domain.member;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -10,21 +11,26 @@ import java.util.UUID;
 @Schema(description = "유저 정보")
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "\"member\"", schema = "public")
 public class Member {
 
     @Schema(description = "유저의 UUID")
     @Id
     private UUID id;
+
     @Schema(description = "유저의 email")
     @Column(nullable = false, length = 50, unique = true)
     private String email;
+
     @Schema(description = "유저명")
     @Column(name = "\"name\"", length = 20)
     private String name;
+
     @Schema(description = "비밀번호")
     @Column(name = "\"password\"", nullable = false, length = 100)
     private String password;
+
     @Schema(description = "핸드폰번호")
     @Column(nullable = false, length = 20, unique = true)
     private String phone;
@@ -46,7 +52,8 @@ public class Member {
 
     @Column(name = "flag", length = 5)
     private String flag;
-    public Member(){}
+
+
     public Member(UUID id,
                   String email,
                   String name,
@@ -55,21 +62,6 @@ public class Member {
                   String saltKey,
                   String flag) {
         this.id = id;
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.phone = phone;
-        this.saltKey = saltKey;
-        this.flag = flag;
-    }
-    public Member(String id,
-                  String email,
-                  String name,
-                  String password,
-                  String phone,
-                  String saltKey,
-                  String flag) {
-        this.id = UUID.fromString(id);
         this.email = email;
         this.name = name;
         this.password = password;
