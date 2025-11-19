@@ -1,4 +1,4 @@
-package site.thedeny1106.study.member;
+package site.thedeny1106.study.domain.member;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
