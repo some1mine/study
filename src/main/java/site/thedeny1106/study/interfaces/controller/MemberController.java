@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import site.thedeny1106.study.application.service.MemberService;
-import site.thedeny1106.study.common.ResponseEntity;
+import site.thedeny1106.study.infrastructure.common.ResponseEntity;
 import site.thedeny1106.study.domain.member.MemberRequest;
 import site.thedeny1106.study.domain.member.MemberResponse;
 

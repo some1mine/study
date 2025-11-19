@@ -3,7 +3,7 @@ package site.thedeny1106.study.application.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import site.thedeny1106.study.common.ResponseEntity;
+import site.thedeny1106.study.infrastructure.common.ResponseEntity;
 import site.thedeny1106.study.domain.member.Member;
 import site.thedeny1106.study.domain.member.MemberRepository;
 import site.thedeny1106.study.domain.member.MemberRequest;
