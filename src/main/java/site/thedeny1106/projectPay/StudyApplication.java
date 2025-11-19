@@ -1,4 +1,4 @@
-package site.thedeny1106.study;
+package site.thedeny1106.projectPay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

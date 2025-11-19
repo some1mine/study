@@ -1,4 +1,4 @@
-package site.thedeny1106.study.interfaces.controller;
+package site.thedeny1106.projectPay.interfaces.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

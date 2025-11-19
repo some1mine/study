@@ -1,4 +1,4 @@
-package site.thedeny1106.study.domain.member;
+package site.thedeny1106.projectPay.domain.member;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

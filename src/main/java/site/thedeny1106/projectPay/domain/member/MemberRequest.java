@@ -1,4 +1,4 @@
-package site.thedeny1106.study.domain.member;
+package site.thedeny1106.projectPay.domain.member;
 
 public record MemberRequest(
         String email,

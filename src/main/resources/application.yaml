@@ -2,7 +2,7 @@ api:
   v1: version1
 spring:
   application:
-    name: study
+    name: projectPay
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver

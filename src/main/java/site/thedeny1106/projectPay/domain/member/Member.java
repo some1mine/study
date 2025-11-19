@@ -1,4 +1,4 @@
-package site.thedeny1106.study.domain.member;
+package site.thedeny1106.projectPay.domain.member;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;

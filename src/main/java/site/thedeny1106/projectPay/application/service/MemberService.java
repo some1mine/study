@@ -1,13 +1,13 @@
-package site.thedeny1106.study.application.service;
+package site.thedeny1106.projectPay.application.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import site.thedeny1106.study.infrastructure.common.ResponseEntity;
-import site.thedeny1106.study.domain.member.Member;
-import site.thedeny1106.study.domain.member.MemberRepository;
-import site.thedeny1106.study.domain.member.MemberRequest;
-import site.thedeny1106.study.domain.member.MemberResponse;
+import site.thedeny1106.projectPay.infrastructure.common.ResponseEntity;
+import site.thedeny1106.projectPay.domain.member.Member;
+import site.thedeny1106.projectPay.domain.member.MemberRepository;
+import site.thedeny1106.projectPay.domain.member.MemberRequest;
+import site.thedeny1106.projectPay.domain.member.MemberResponse;
 
 import java.util.List;
 import java.util.UUID;

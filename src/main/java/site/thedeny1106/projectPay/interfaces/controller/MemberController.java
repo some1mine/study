@@ -1,12 +1,12 @@
-package site.thedeny1106.study.interfaces.controller;
+package site.thedeny1106.projectPay.interfaces.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import site.thedeny1106.study.application.service.MemberService;
-import site.thedeny1106.study.infrastructure.common.ResponseEntity;
-import site.thedeny1106.study.domain.member.MemberRequest;
-import site.thedeny1106.study.domain.member.MemberResponse;
+import site.thedeny1106.projectPay.application.service.MemberService;
+import site.thedeny1106.projectPay.infrastructure.common.ResponseEntity;
+import site.thedeny1106.projectPay.domain.member.MemberRequest;
+import site.thedeny1106.projectPay.domain.member.MemberResponse;
 
 import java.util.List;
 

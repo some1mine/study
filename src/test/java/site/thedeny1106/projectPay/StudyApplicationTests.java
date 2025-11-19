@@ -1,4 +1,4 @@
-package site.thedeny1106.study;
+package site.thedeny1106.projectPay;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
