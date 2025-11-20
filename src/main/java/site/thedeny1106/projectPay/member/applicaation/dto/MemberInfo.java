@@ -1,9 +1,10 @@
-package site.thedeny1106.projectPay.domain.member;
+package site.thedeny1106.projectPay.member.applicaation.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.thedeny1106.projectPay.member.domain.Member;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -13,7 +14,7 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @Table(name = "\"member\"", schema = "public")
-public class Member {
+public class MemberInfo {
 
     @Schema(description = "유저의 UUID")
     @Id
@@ -54,20 +55,26 @@ public class Member {
     private String flag;
 
 
-    public Member(UUID id,
-                  String email,
-                  String name,
-                  String password,
-                  String phone,
-                  String saltKey,
-                  String flag) {
+    public MemberInfo(UUID id,
+                      String email,
+                      String name,
+                      String phone,
+                      String flag) {
         this.id = id;
         this.email = email;
         this.name = name;
-        this.password = password;
         this.phone = phone;
-        this.saltKey = saltKey;
         this.flag = flag;
+    }
+
+    public static MemberInfo from(Member member) {
+        return new MemberInfo(
+                member.getId(),
+                member.getEmail(),
+                member.getName(),
+                member.getPhone(),
+                member.getFlag()
+        );
     }
 
     @PrePersist
