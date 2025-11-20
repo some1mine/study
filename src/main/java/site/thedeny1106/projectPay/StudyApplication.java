@@ -12,6 +12,7 @@ public class StudyApplication {
 		SpringApplication.run(StudyApplication.class, args);
 	}
 
+
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();
