@@ -24,3 +24,9 @@ spring:
         format_sql: true
         jdbc:
           time_zone: UTC
+
+payment:
+  toss:
+    secret-key: ${TOSS_SECRET_KEY:}
+    success_url: ${TOSS_SUCCESS_URL:http://localhost:8080/payments/success.html}
+    fail_url: ${TOSS_FAIL_URL:http://localhost:8080/payments/fail.html}

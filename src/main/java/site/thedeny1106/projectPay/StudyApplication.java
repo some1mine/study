@@ -2,6 +2,8 @@ package site.thedeny1106.projectPay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class StudyApplication {
@@ -10,4 +12,8 @@ public class StudyApplication {
 		SpringApplication.run(StudyApplication.class, args);
 	}
 
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 }
