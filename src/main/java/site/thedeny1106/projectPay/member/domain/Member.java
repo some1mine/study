@@ -3,13 +3,14 @@ package site.thedeny1106.projectPay.member.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Schema(description = "유저 정보")
-@Data
+@Getter
 @Entity
 @NoArgsConstructor
 @Table(name = "\"member\"", schema = "public")

@@ -6,10 +6,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import site.thedeny1106.projectPay.common.ResponseEntity;
 import site.thedeny1106.projectPay.payment.application.PaymentService;
-//import site.thedeny1106.projectPay.payment.application.dto.PaymentFailureInfo;
+import site.thedeny1106.projectPay.payment.application.dto.PaymentFailureInfo;
 import site.thedeny1106.projectPay.payment.application.dto.PaymentInfo;
-//import site.thedeny1106.projectPay.payment.presentation.dto.PaymentFailRequest;
-//import site.thedeny1106.projectPay.payment.presentation.dto.PaymentRequest;
+import site.thedeny1106.projectPay.payment.presentation.dto.PaymentFailRequest;
+import site.thedeny1106.projectPay.payment.presentation.dto.PaymentRequest;
 
 import java.util.List;
 
@@ -25,15 +25,15 @@ public class PaymentController {
         return paymentService.findAll(pageable);
     }
 
-//    @Operation(summary = "토스 결제 승인", description = "토스 결제 완료 후 paymentKey/orderId/amount를 전달받아 결제를 승인한다.")
-//    @PostMapping("/confirm")
-//    public ResponseEntity<PaymentInfo> confirm(@RequestBody PaymentRequest request) {
-//        return paymentService.confirm(request.toCommand());
-//    }
+    @Operation(summary = "토스 결제 승인", description = "토스 결제 완료 후 paymentKey/orderId/amount를 전달받아 결제를 승인한다.")
+    @PostMapping("/confirm")
+    public ResponseEntity<PaymentInfo> confirm(@RequestBody PaymentRequest request) {
+        return paymentService.confirm(request.toCommand());
+    }
 
-//    @Operation(summary = "결제 실패 기록", description = "토스 결제 실패 정보를 저장한다.")
-//    @PostMapping("/fail")
-//    public ResponseEntity<PaymentFailureInfo> fail(@RequestBody PaymentFailRequest request) {
-//        return paymentService.recordFailure(request.toCommand());
-//    }
+    @Operation(summary = "결제 실패 기록", description = "토스 결제 실패 정보를 저장한다.")
+    @PostMapping("/fail")
+    public ResponseEntity<PaymentFailureInfo> fail(@RequestBody PaymentFailRequest request) {
+        return paymentService.recordFailure(request.toCommand());
+    }
 }

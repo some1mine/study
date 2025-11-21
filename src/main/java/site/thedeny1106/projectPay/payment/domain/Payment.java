@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "\"payment\"", schema = "public")
+@Table(name = "payment", schema = "public")
 public class Payment {
 
     @Id

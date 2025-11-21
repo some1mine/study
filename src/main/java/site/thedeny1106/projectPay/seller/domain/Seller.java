@@ -4,12 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Data
+@Getter
 @Entity
+@NoArgsConstructor
 @Table(name = "\"seller\"", schema = "public")
 public class Seller {
 
@@ -27,7 +30,8 @@ public class Seller {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Seller(String companyName, String representativeName, String email, String phone, String businessNumber, String address, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Seller(UUID id, String companyName, String representativeName, String email, String phone, String businessNumber, String address, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
         this.companyName = companyName;
         this.representativeName = representativeName;
         this.email = email;
@@ -41,6 +45,7 @@ public class Seller {
 
     public static Seller create(String companyName, String representativeName, String email, String phone, String businessNumber, String address, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
         return new Seller(
+                UUID.randomUUID(),
                 companyName,
                 representativeName,
                 email,

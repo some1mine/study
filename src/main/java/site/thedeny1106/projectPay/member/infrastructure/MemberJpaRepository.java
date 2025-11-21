@@ -6,7 +6,6 @@ import site.thedeny1106.projectPay.member.domain.Member;
 
 import java.util.UUID;
 
-@Repository
 public interface MemberJpaRepository extends JpaRepository<Member, UUID> {
 
 }

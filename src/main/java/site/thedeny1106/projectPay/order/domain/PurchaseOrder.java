@@ -9,12 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Getter
 @Table(name = "\"purchase_order\"", schema = "public")
 public class PurchaseOrder {
 
@@ -87,35 +89,4 @@ public class PurchaseOrder {
         updatedAt = LocalDateTime.now();
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public UUID getProductId() {
-        return productId;
-    }
-
-    public UUID getSellerId() {
-        return sellerId;
-    }
-
-    public UUID getMemberId() {
-        return memberId;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public PurchaseOrderStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 }

@@ -25,7 +25,7 @@
 
     async function confirmPayment() {
         try {
-            const response = await fetch('/api/v1/payments/confirm', {
+            const response = await fetch('/version1/payments/confirm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)

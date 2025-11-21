@@ -7,12 +7,14 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Getter
 @Table(name = "\"seller_settlement\"", schema = "public")
 public class SellerSettlement {
 
@@ -67,33 +69,5 @@ public class SellerSettlement {
             status = SettlementStatus.PENDING;
         }
         createdAt = LocalDateTime.now();
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public UUID getSellerId() {
-        return sellerId;
-    }
-
-    public UUID getOrderId() {
-        return orderId;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public SettlementStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getSettledAt() {
-        return settledAt;
     }
 }

@@ -1,5 +1,6 @@
 package site.thedeny1106.projectPay.settelment.infrastrcture;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import site.thedeny1106.projectPay.settelment.domain.SellerSettlement;
 import site.thedeny1106.projectPay.settelment.domain.SellerSettlementRepository;
@@ -9,13 +10,10 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
+@RequiredArgsConstructor
 public class SellerSettlementRepositoryAdapter implements SellerSettlementRepository {
 
     private final SellerSettlementJpaRepository sellerSettlementJpaRepository;
-
-    public SellerSettlementRepositoryAdapter(SellerSettlementJpaRepository sellerSettlementJpaRepository) {
-        this.sellerSettlementJpaRepository = sellerSettlementJpaRepository;
-    }
 
     @Override
     public SellerSettlement save(SellerSettlement settlement) {
