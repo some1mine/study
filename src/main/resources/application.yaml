@@ -1,12 +1,7 @@
 api:
-  v1: version1
-  settlement:
-    async:
-      enabled: false
-      pool_size: 5
+  v1: v3/api-docs
+
 spring:
-  application:
-    name: projectPay
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -28,6 +23,21 @@ spring:
         format_sql: true
         jdbc:
           time_zone: UTC
+  application:
+    name: PAY-SERVICE
+
+  elasticsearch:
+    uris: http://localhost:9200
+    connection-timeout: 10s
+    socket-timeout: 3s
+
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: pay-service
+      fail-fast: true
   batch:
     jdbc:
       initialize-schema: never
@@ -35,11 +45,23 @@ spring:
     scheduling:
       cron:
         settlement: ${SETTLEMENT_CRON:-}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, info, prometheus
+
 server:
   port: 8080
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+
 payment:
   toss:
-    secret-key: ${TOSS_SECRET_KEY}
-
-
+    secret-key: ${TOSS_SECRET_KEY:}
+    success_url: ${TOSS_SUCCESS_URL:http://localhost:64432/study/study.main/static/payments/success.html}
+    fail_url: ${TOSS_FAIL_URL:http://localhost:64432/study/study.main/static/payments/fail.html}
